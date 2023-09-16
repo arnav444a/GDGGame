@@ -8,6 +8,7 @@ public class BirdBehaviour : MonoBehaviour
     Vector3 oldPos;
     Rigidbody2D rb;
     Vector2 direction;
+    Vector2 currentVelocity;
     public float speed = 8;
     Vector2 vel;
     private void Update()
@@ -17,6 +18,7 @@ public class BirdBehaviour : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+       
         if(collision.gameObject.tag == "snake")
         {
             BirdDie();
@@ -37,25 +39,25 @@ public class BirdBehaviour : MonoBehaviour
         if(collision.gameObject.tag == "NEGborderY")
         {
 
-            rb.velocity = new Vector2(vel.x, -Mathf.Abs(vel.y));
+            rb.velocity = new Vector2(currentVelocity.x, - Mathf.Abs(currentVelocity.y));
         }
         if (collision.gameObject.tag == "borderY")
         {
-            rb.velocity = new Vector2(vel.x, Mathf.Abs(vel.y));
+            rb.velocity = new Vector2(currentVelocity.x,  Mathf.Abs(currentVelocity.y));
 
         }
         if (collision.gameObject.tag == "NEGborderX")
         {
-            rb.velocity = new Vector2(-Mathf.Abs( vel.x), vel.y);
+            rb.velocity = new Vector2(- Mathf.Abs(currentVelocity.x), currentVelocity.y);
 
 
         }
         if (collision.gameObject.tag == "borderX")
         {
-            rb.velocity = new Vector2(Mathf.Abs(vel.x), vel.y);
-
-
+            rb.velocity = new Vector2(Mathf.Abs(currentVelocity.x), currentVelocity.y);
         }
+
+        currentVelocity = rb.velocity;
     }
 
     private void Awake()
@@ -63,6 +65,7 @@ public class BirdBehaviour : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         direction = new Vector2((float)Random.Range(-1000, 1000), (float)Random.Range(-1000, 1000)).normalized;
         rb.velocity = direction * speed;
+        currentVelocity = rb.velocity;
     }
     public void BirdDie()
     {
