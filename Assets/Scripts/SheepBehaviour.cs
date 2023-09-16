@@ -21,6 +21,12 @@ public class SheepBehaviour : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        if(gameObject.tag == "sheep" || gameObject.tag == "firesheep")
+        {
+            SpawnerScript.sheepCount += 1;
+        }
+
         if (fireSheep)
         {
                 oldPos = transform.position;
@@ -80,6 +86,10 @@ public class SheepBehaviour : MonoBehaviour
     public void KillSheep()
     {
         deathNoise.Play();
+        if (gameObject.tag == "sheep" || gameObject.tag == "firesheep")
+        {
+            SpawnerScript.sheepCount -= 1;
+        }
         CameraShake.instance.ShakeSmall();
         Destroy(this.gameObject, 0.2f);
     }
