@@ -72,6 +72,10 @@ public class SheepBehaviour : MonoBehaviour
         {
             KillSheep();
         }
+        if(collision.gameObject.tag == "car")
+        {
+            KillSheep();
+        }
     }
     public void KillSheep()
     {

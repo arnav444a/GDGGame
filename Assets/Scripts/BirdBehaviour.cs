@@ -76,5 +76,17 @@ public class BirdBehaviour : MonoBehaviour
     {
         Instantiate(fire, transform.position, Quaternion.identity);
     }
+    public void ProduceFire()
+    {
+        if (oldPos == null)
+        {
+            oldPos = transform.position;
+        }
+        else
+        {
+            oldPos = transform.position;
+            InvokeRepeating("SpawnFire", 0.5f, 0.5f);
+        }
+    }
 
 }

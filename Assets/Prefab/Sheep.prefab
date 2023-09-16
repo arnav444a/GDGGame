@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6668807489729038072}
   - component: {fileID: 3884939835289742222}
   - component: {fileID: 5169018830402638826}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sheep
   m_TagString: sheep
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 9062461314736475014}
   - component: {fileID: 3193254287011731362}
   - component: {fileID: 4744793184251583550}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

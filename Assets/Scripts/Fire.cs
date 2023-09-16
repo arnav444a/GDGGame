@@ -17,6 +17,10 @@ public class Fire : MonoBehaviour
         {
             collision.gameObject.GetComponent<SheepBehaviour>().KillSheep();
         }
+        if(collision.gameObject.tag == "bird")
+        {
+            collision.gameObject.GetComponent<BirdBehaviour>().ProduceFire();
+        }
 
     }
 }
