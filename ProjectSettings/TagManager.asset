@@ -12,6 +12,8 @@ TagManager:
   - borderX
   - borderY
   - fire
+  - NEGborderX
+  - NEGborderY
   layers:
   - Default
   - TransparentFX

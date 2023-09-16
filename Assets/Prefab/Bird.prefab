@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1299420000127392473}
   - component: {fileID: 4871932505112184573}
   - component: {fileID: 3320497992732331361}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 8591244952185618141}
   - component: {fileID: 3693090249064601511}
   - component: {fileID: 8055852417701697730}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bird
   m_TagString: bird
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 5620254347277154394}
   m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
