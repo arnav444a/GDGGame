@@ -12,13 +12,20 @@ public class SpawnerScript : MonoBehaviour
     public float maxDelay;
     public float minDelay;
     public float maxDelayTime;
+
+    public int spawnAmount = 1;
+
     private void Update()
     {
         time -= Time.deltaTime;
         if (time <= 0)
         {
             time = delayToSpawn;
-            SpawnObject();
+            for(int i = 0; i < spawnAmount;i++)
+            {
+                SpawnObject();
+            }
+            
         }
     }
     public void SpawnObject()

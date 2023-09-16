@@ -13,12 +13,23 @@ public class SheepBehaviour : MonoBehaviour
     public bool fireSheep;
     public GameObject fire;
     public Transform sprite;
+
+    public Vector3 oldPos;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         if (fireSheep)
         {
-            InvokeRepeating("SpawnFire", 0.2f, 0.2f);
+            if(oldPos == null)
+            {
+                oldPos = transform.position;
+            }
+            else {
+                oldPos = transform.position;
+                InvokeRepeating("SpawnFire", 0.5f, 0.5f);
+            }
+            
         }
     }
     private void Update()
@@ -50,13 +61,14 @@ public class SheepBehaviour : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "snake")
+        if(collision.gameObject.tag == "snake" && gameObject.tag != "snake")
         {
             KillSheep();
         }
     }
     public void KillSheep()
     {
+        CameraShake.instance.ShakeSmall();
         Destroy(this.gameObject);
     }
 }

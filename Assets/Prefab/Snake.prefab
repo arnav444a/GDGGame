@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 916278548, guid: 98fdac487cceada44949b360e3113bb5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -180,6 +180,7 @@ MonoBehaviour:
   fireSheep: 0
   fire: {fileID: 0}
   sprite: {fileID: 3883322556817689146}
+  oldPos: {x: 0, y: 0, z: 0}
 --- !u!61 &-1383565830288511753
 BoxCollider2D:
   m_ObjectHideFlags: 0

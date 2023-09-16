@@ -13,12 +13,10 @@ public class CameraShake : MonoBehaviour
             instance = this;
         }
     }
-    public void Update()
+
+    public void ShakeSmall()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartCoroutine(Shake(0.3f, 0.1f));
-        }
+        StartCoroutine(Shake(0.3f, 0.3f));
     }
     public IEnumerator Shake(float duration, float magnitude)
     {
