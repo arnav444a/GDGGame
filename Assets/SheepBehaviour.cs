@@ -13,6 +13,8 @@ public class SheepBehaviour : MonoBehaviour
     public bool fireSheep;
     public GameObject fire;
     public Transform sprite;
+
+    bool canIdle = true;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -42,6 +44,15 @@ public class SheepBehaviour : MonoBehaviour
         if (directionToEntity.magnitude < cappedDistance)
         {
             rb.velocity = directionToEntity.normalized * forceMultiplier;
+            StopAllCoroutines();
+            canIdle = true;
+        }
+        else
+        {
+            if (canIdle)
+            {
+                StartCoroutine(IdleSheep());
+            }
         }
     }
     public void SpawnFire()
@@ -50,7 +61,7 @@ public class SheepBehaviour : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "snake")
+        if(collision.gameObject.tag == "snake" )
         {
             KillSheep();
         }
@@ -58,5 +69,16 @@ public class SheepBehaviour : MonoBehaviour
     public void KillSheep()
     {
         Destroy(this.gameObject);
+    }
+    public IEnumerator IdleSheep()
+    {
+        rb.velocity = Vector2.zero;
+        canIdle = false;
+        yield return new WaitForSeconds(1);
+        Vector2 direction = new Vector2((float)Random.Range(-1000, 1000), (float)Random.Range(-1000, 1000)).normalized;
+        rb.velocity = direction * speed;
+        yield return new WaitForSeconds(4);
+        rb.velocity = Vector2.zero;
+        canIdle = true;
     }
 }
