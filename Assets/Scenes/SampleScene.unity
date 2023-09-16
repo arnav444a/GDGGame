@@ -3724,7 +3724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cf82810c5002ac4a9faccbabfa273f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerDuration: 0
+  timerDuration: 99999
   countDown: 0
   firstMinute: {fileID: 300002079}
   secondMinute: {fileID: 1432310634}

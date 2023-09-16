@@ -18,6 +18,11 @@ public class SheepBehaviour : MonoBehaviour
 
     public AudioSource deathNoise;
     bool canIdle = true;
+
+    public float minIdleTime = 2;
+    public float maxIdleTime = 2;
+    public float minMoveTime = 3;
+    public float maxMoveTime = 3;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -98,10 +103,10 @@ public class SheepBehaviour : MonoBehaviour
     {
         canIdle = false;
         rb.velocity = Vector2.zero;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(Random.Range(minIdleTime,maxIdleTime));
         Vector2 direction = new Vector2((float)Random.Range(-1000, 1000), (float)Random.Range(-1000, 1000)).normalized;
         rb.velocity = direction * speed;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(Random.Range(minMoveTime, maxMoveTime));
         canIdle = true;
         rb.velocity = Vector2.zero;
     }
