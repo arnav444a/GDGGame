@@ -11,6 +11,7 @@ public class BirdBehaviour : MonoBehaviour
     Vector2 currentVelocity;
     public float speed = 8;
     Vector2 vel;
+    bool fireBird = false;
     private void Update()
     {
          
@@ -74,19 +75,25 @@ public class BirdBehaviour : MonoBehaviour
     }
     public void SpawnFire()
     {
-        Instantiate(fire, transform.position, Quaternion.identity);
+        Instantiate(fire, oldPos, Quaternion.identity);
+        oldPos = transform.position;
     }
     public void ProduceFire()
     {
-        if (oldPos == null)
+        if (fireBird == false)
         {
-            oldPos = transform.position;
+            fireBird = true;
+            if (oldPos == null)
+            {
+                oldPos = transform.position;
+            }
+            else
+            {
+                oldPos = transform.position;
+                InvokeRepeating("SpawnFire", 0.5f, 0.5f);
+            }
         }
-        else
-        {
-            oldPos = transform.position;
-            InvokeRepeating("SpawnFire", 0.5f, 0.5f);
-        }
+
     }
 
 }

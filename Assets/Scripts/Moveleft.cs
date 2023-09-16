@@ -20,6 +20,6 @@ public class Moveleft : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = direction * speed;
+        rb.velocity = direction * speed; 
     }
 }
