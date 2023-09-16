@@ -7,6 +7,11 @@ TagManager:
   - sheep
   - snake
   - firesheep
+  - bird
+  - border
+  - borderX
+  - borderY
+  - fire
   layers:
   - Default
   - TransparentFX
