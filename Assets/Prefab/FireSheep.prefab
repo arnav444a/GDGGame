@@ -75,9 +75,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7fac1d8fbb54242a0239ba914cc875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprintSpeed: 5
-  speed: 2
-  cappedDistance: 4
+  sprintSpeed: 7
+  speed: 4
+  cappedDistance: 6
   fireSheep: 1
   fire: {fileID: 5044940246673943270, guid: d974bcec9f1b6984e9286dd38f14a3fc, type: 3}
   sprite: {fileID: 2772156478850290618}
@@ -87,6 +87,7 @@ MonoBehaviour:
   maxIdleTime: 2
   minMoveTime: 3
   maxMoveTime: 3
+  idleSpeed: 9
 --- !u!50 &6668807489729038072
 Rigidbody2D:
   serializedVersion: 4

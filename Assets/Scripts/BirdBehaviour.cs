@@ -12,10 +12,7 @@ public class BirdBehaviour : MonoBehaviour
     public float speed = 8;
     Vector2 vel;
     bool fireBird = false;
-    private void Update()
-    {
-         
-    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
