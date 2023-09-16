@@ -16,6 +16,8 @@ public class SheepBehaviour : MonoBehaviour
 
     public Vector3 oldPos;
 
+    public AudioSource deathNoise;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -64,7 +66,8 @@ public class SheepBehaviour : MonoBehaviour
     }
     public void KillSheep()
     {
+        deathNoise.Play();
         CameraShake.instance.ShakeSmall();
-        Destroy(this.gameObject);
+        Destroy(this.gameObject, 0.2f);
     }
 }
