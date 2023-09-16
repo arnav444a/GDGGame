@@ -17,7 +17,7 @@ public class SheepBehaviour : MonoBehaviour
     public Vector3 oldPos;
 
     public AudioSource deathNoise;
-
+    bool canIdle = true;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -50,6 +50,15 @@ public class SheepBehaviour : MonoBehaviour
         if (directionToEntity.magnitude < cappedDistance)
         {
             rb.velocity = directionToEntity.normalized * forceMultiplier;
+            canIdle = true;
+            StopAllCoroutines();
+        }
+        else
+        {
+            if (canIdle)
+            {
+                StartCoroutine(IdleSheep());
+            }
         }
     }
     public void SpawnFire()
@@ -69,5 +78,16 @@ public class SheepBehaviour : MonoBehaviour
         deathNoise.Play();
         CameraShake.instance.ShakeSmall();
         Destroy(this.gameObject, 0.2f);
+    }
+    public IEnumerator IdleSheep()
+    {
+        canIdle = false;
+        rb.velocity = Vector2.zero;
+        yield return new WaitForSeconds(1);
+        Vector2 direction = new Vector2((float)Random.Range(-1000, 1000), (float)Random.Range(-1000, 1000)).normalized;
+        rb.velocity = direction * speed;
+        yield return new WaitForSeconds(2);
+        canIdle = true;
+        rb.velocity = Vector2.zero;
     }
 }

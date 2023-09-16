@@ -101,5 +101,7 @@ MonoBehaviour:
   spawnableObjects:
   - {fileID: 7011494142262754131, guid: d42e1bdfb9ce2dd46ab512440499e7dc, type: 3}
   - {fileID: 5620254347277154394, guid: 5ce80cafb502dc5429cab216acbdadc3, type: 3}
-  - {fileID: 5620254347277154394, guid: 5ce80cafb502dc5429cab216acbdadc3, type: 3}
+  - {fileID: 2464318484112959749, guid: affb5c9164cacd04785e04b0955a7648, type: 3}
+  - {fileID: 2464318484112959749, guid: affb5c9164cacd04785e04b0955a7648, type: 3}
+  - {fileID: 2464318484112959749, guid: affb5c9164cacd04785e04b0955a7648, type: 3}
   dustCloud: {fileID: 6425341478478443459, guid: fe6f861bd85442c48a6fb2a91406d227, type: 3}
