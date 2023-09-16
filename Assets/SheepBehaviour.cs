@@ -21,17 +21,12 @@ public class SheepBehaviour : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         if (fireSheep)
         {
-            if(oldPos == null)
-            {
-                oldPos = transform.position;
-            }
-            else {
                 oldPos = transform.position;
                 InvokeRepeating("SpawnFire", 0.5f, 0.5f);
-            }
-            
         }
     }
+
+   
     private void Update()
     {
         if (rb.velocity.x < 0)
@@ -57,7 +52,8 @@ public class SheepBehaviour : MonoBehaviour
     }
     public void SpawnFire()
     {
-        Instantiate(fire, transform.position, Quaternion.identity);
+        Instantiate(fire, oldPos, Quaternion.identity);
+        oldPos = transform.position;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
