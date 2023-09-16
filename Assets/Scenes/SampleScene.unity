@@ -726,6 +726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collider: {fileID: 1080277899}
   prefab: {fileID: 7176363779410259557, guid: eaecd845afdc9a545a4610ea65f10315, type: 3}
+  sheep: {fileID: 2464318484112959749, guid: affb5c9164cacd04785e04b0955a7648, type: 3}
   delayToSpawn: 2
   maxDelay: 0
   minDelay: 0
