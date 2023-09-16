@@ -203,6 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fire: {fileID: 5044940246673943270, guid: d974bcec9f1b6984e9286dd38f14a3fc, type: 3}
   speed: 8
+  renderer: {fileID: 4871932505112184573}
 --- !u!82 &8616407074540633667
 AudioSource:
   m_ObjectHideFlags: 0
