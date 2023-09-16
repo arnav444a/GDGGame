@@ -83,6 +83,10 @@ MonoBehaviour:
   sprite: {fileID: 2772156478850290618}
   oldPos: {x: 0, y: 0, z: 0}
   deathNoise: {fileID: 2516475295049340913}
+  minIdleTime: 2
+  maxIdleTime: 2
+  minMoveTime: 3
+  maxMoveTime: 3
 --- !u!50 &6668807489729038072
 Rigidbody2D:
   serializedVersion: 4

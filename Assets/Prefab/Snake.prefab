@@ -184,6 +184,10 @@ MonoBehaviour:
   sprite: {fileID: 3883322556817689146}
   oldPos: {x: 0, y: 0, z: 0}
   deathNoise: {fileID: 5473521914752738248}
+  minIdleTime: 2
+  maxIdleTime: 2
+  minMoveTime: 3
+  maxMoveTime: 3
 --- !u!61 &-1383565830288511753
 BoxCollider2D:
   m_ObjectHideFlags: 0
