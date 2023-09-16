@@ -9,6 +9,9 @@ public class MysteryBoxHandler : MonoBehaviour
     float t;
     public float timeToReachGround;
     public GameObject[] spawnableObjects;
+
+    public GameObject dustCloud;
+
     private void Awake()
     {
         endPos = transform.position;
@@ -27,6 +30,7 @@ public class MysteryBoxHandler : MonoBehaviour
     public void OpenBox()
     {
         Instantiate(spawnableObjects[Random.Range(0, spawnableObjects.Length)], transform.position, Quaternion.identity);
+        Instantiate(dustCloud, transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
 }
