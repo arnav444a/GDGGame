@@ -14,6 +14,15 @@ public class BirdBehaviour : MonoBehaviour
     bool fireBird = false;
 
 
+    public SpriteRenderer renderer;
+
+
+    IEnumerator FireDeath()
+    {
+        yield return new WaitForSeconds(3f);
+        BirdDie();
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
        
@@ -23,15 +32,12 @@ public class BirdBehaviour : MonoBehaviour
 
         }
         if( collision.gameObject.tag == "fire")
-        { 
+        {
+            StartCoroutine(FireDeath());
             if (oldPos == null)
             {
                 oldPos = transform.position;
-            }
-            else
-            {
-                oldPos = transform.position;
-                InvokeRepeating("SpawnFire", 0.5f, 0.5f);
+                InvokeRepeating("SpawnFire", 0.1f, 0.2f);
             }
         }
         if(collision.gameObject.tag == "NEGborderY")
@@ -80,15 +86,14 @@ public class BirdBehaviour : MonoBehaviour
         if (fireBird == false)
         {
             fireBird = true;
+            renderer.color = Color.red;
+
+            StartCoroutine(FireDeath());
             if (oldPos == null)
             {
                 oldPos = transform.position;
             }
-            else
-            {
-                oldPos = transform.position;
-                InvokeRepeating("SpawnFire", 0.5f, 0.5f);
-            }
+            InvokeRepeating("SpawnFire", 0.1f, 0.2f);
         }
 
     }

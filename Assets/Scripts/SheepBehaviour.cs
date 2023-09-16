@@ -29,9 +29,10 @@ public class SheepBehaviour : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        if(gameObject.tag == "sheep" || gameObject.tag == "firesheep")
+        if(gameObject.tag == "sheep")
         {
             SpawnerScript.sheepCount += 1;
+            print(SpawnerScript.sheepCount);
         }
 
         if (fireSheep)
@@ -93,7 +94,7 @@ public class SheepBehaviour : MonoBehaviour
     public void KillSheep()
     {
         deathNoise.Play();
-        if (gameObject.tag == "sheep" || gameObject.tag == "firesheep")
+        if (gameObject.tag == "sheep" )
         {
             SpawnerScript.sheepCount -= 1;
         }

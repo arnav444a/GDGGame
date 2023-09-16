@@ -17,7 +17,7 @@ public class SpawnerScript : MonoBehaviour
 
     public int spawnAmount = 1;
 
-    public static int sheepCount;
+    public static int sheepCount = 0;
 
 
     public void Awake()
